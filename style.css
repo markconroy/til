@@ -1,0 +1,51 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.container > * {
+  width: 50%;
+  padding: 1rem;
+}
+
+.inputs {
+  background-color: beige;
+}
+
+.til {
+  background-color: azure;
+}
+
+.text-for-thing {
+  width: 100%;
+  padding: 1rem;
+}
+
+[type="button"] {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.things-i-learned {
+  padding-left: 0;
+}
+
+.thing-i-learned {
+  list-style: none;
+  border: 1px solid darkkhaki;
+  padding: 1rem;
+}
+
+.thing-i-learned + .thing-i-learned {
+  margin-top: 1rem;
+}
