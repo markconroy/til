@@ -1,6 +1,6 @@
-let itemKey = localStorage.length;
+const allTheseThings = Array.from(localStorage);
 const til = document.querySelector('.til');
-const list = document.createElement('ul');
+const list = document.createElement('ol');
 const textarea = document.querySelector('.text-for-thing');
 const submit = document.querySelector('.add-item');
 const removeAll = document.querySelector('.remove-all');
@@ -8,7 +8,7 @@ const listItems = list.querySelectorAll('li');
 list.classList.add('things-i-learned');
 til.appendChild(list);
 
-for (let i = 0; i < localStorage.length; i++) {
+for (let i = 1; i < localStorage.length + 1; i++) {
   const element = document.createElement('li');
   element.classList.add('thing-i-learned');
   list.appendChild(element);
@@ -22,8 +22,7 @@ submit.addEventListener('click', function() {
   element.classList.add('thing-i-learned'); 
   element.innerHTML = text;
   list.appendChild(element);
-  localStorage.setItem(itemKey, text);
-  itemKey = localStorage.length + 1;
+  localStorage.setItem(localStorage.length + 1, text);
 });
 
 removeAll.addEventListener('click', function() {
