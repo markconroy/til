@@ -1,24 +1,30 @@
 :root {
+  --color-dark: #333;
+  --color-light: #fafafa;
   --spacing: 1rem;
   --border-width: 3px;
-  --border-color: black;
+  --border-color: var(--color-dark);
   --border: var(--border-width) solid var(--border-color);
+  --transition-time: .3s;
 }
 
 *, *::after, *::before {
   box-sizing: border-box;
 }
 
+a, input, textarea {
+  transition: var(--transition-time);
+}
+
 body {
-  /* margin: 0; */
-  /* background-color: black; */
   border: var(--border);
+  font-family: sans-serif;
 }
 
 .grid {
   display: flex;
   gap: var(--border-width);
-  background-color: black;
+  background-color: var(--color-dark)
 }
 
 .grid__column {
@@ -38,8 +44,8 @@ body {
 
 .title {
   padding: var(--spacing);
-  background-color: cadetblue;
-  color: white;
+  background-color: var(--color-dark);
+  color: var(--color-light);
   border-bottom: var(--border);
 }
 
@@ -58,6 +64,16 @@ input, textarea {
   padding: var(--spacing);
   margin-top: var(--spacing);
   cursor: pointer;
+}
+
+[type="button"]:hover,
+[type="button"]:focus {
+  background-color: var(--color-dark);
+  color: var(--color-light)
+}
+
+[type="button"]:active {
+  padding: calc(var(--spacing) - 2px);;
 }
 
 .things-i-learned {
