@@ -8,13 +8,20 @@
   <title>Today I Learned</title>
 </head>
 <body>
-  <div class="container">
-    <div class="inputs">
-      <textarea name="text-for-thing" class="text-for-thing" id="text-for-thing" cols="30" rows="10"></textarea>
-      <input type="button" class="add-item" value="Add Item">
-      <input type="button" class="remove-all" value="Remove All">
+  <div class="title">
+    <h1>Today I Learned!</h1>
+  </div>
+  <div class="grid">
+    <div class="grid__column grid__column--inputs">
+      <div class="inputs">
+        <textarea name="text-for-thing" class="text-for-thing" id="text-for-thing" cols="30" rows="10"></textarea>
+        <input type="button" class="add-item" value="Add Item">
+        <input type="button" class="remove-all" value="Remove All">
+      </div>
     </div>
-    <div class="til"></div>
+    <div class="grid__column grid__column--items">
+      <div class="items-learned"></div>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>

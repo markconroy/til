@@ -1,38 +1,62 @@
+:root {
+  --spacing: 1rem;
+  --border-width: 3px;
+  --border-color: black;
+  --border: var(--border-width) solid var(--border-color);
+}
+
 *, *::after, *::before {
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+  /* margin: 0; */
+  /* background-color: black; */
+  border: var(--border);
 }
 
-.container {
+.grid {
   display: flex;
-  min-height: 100vh;
+  gap: var(--border-width);
+  background-color: black;
 }
 
-.container > * {
+.grid__column {
   width: 50%;
-  padding: 1rem;
+  padding: var(--spacing);
 }
 
-.inputs {
+.grid__column--inputs {
+  min-height: 100vh;
   background-color: beige;
 }
 
-.til {
+.grid__column--items {
+  min-height: 100vh;
   background-color: azure;
+}
+
+.title {
+  padding: var(--spacing);
+  background-color: cadetblue;
+  color: white;
+  border-bottom: var(--border);
 }
 
 .text-for-thing {
   width: 100%;
-  padding: 1rem;
+  padding: var(--spacing);
+}
+
+input, textarea {
+  border: var(--border);
+  background-color: white;
 }
 
 [type="button"] {
   width: 100%;
-  padding: 1rem;
-  margin-top: 1rem;
+  padding: var(--spacing);
+  margin-top: var(--spacing);
   cursor: pointer;
 }
 
@@ -42,10 +66,10 @@ body {
 
 .thing-i-learned {
   list-style: none;
-  border: 1px solid darkkhaki;
-  padding: 1rem;
+  border: var(--border);
+  padding: var(--spacing);
 }
 
 .thing-i-learned + .thing-i-learned {
-  margin-top: 1rem;
+  margin-top: var(--spacing);
 }
