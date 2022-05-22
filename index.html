@@ -14,13 +14,20 @@
   <div class="grid">
     <div class="grid__column grid__column--inputs">
       <div class="inputs">
-        <textarea name="text-for-thing" class="text-for-thing" id="text-for-thing" cols="30" rows="10"></textarea>
-        <input type="button" class="add-item" value="Add Item">
-        <input type="button" class="remove-all" value="Remove All">
+        <div class="thing">
+          <label class="thing__label" for="text-for-thing">What did you learn today?</label>
+          <textarea name="text-for-thing" class="thing__thing" id="text-for-thing" cols="30" rows="10" placeholder="What did you learn today?"></textarea>
+        </div>
+        <div class="buttons">
+          <input type="button" class="add-item" value="Add Item">
+          <input type="button" class="remove-all" value="Remove All">
+        </div>
       </div>
     </div>
     <div class="grid__column grid__column--items">
-      <div class="items-learned"></div>
+      <div class="items-learned">
+        <h2>The things you have learned are:</h2>
+      </div>
     </div>
   </div>
   <script src="script.js"></script>

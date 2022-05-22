@@ -17,14 +17,13 @@ a, input, textarea {
 }
 
 body {
-  border: var(--border);
+  min-height: 100vh;
   font-family: sans-serif;
 }
 
 .grid {
   display: flex;
-  gap: var(--border-width);
-  background-color: var(--color-dark)
+  gap: var(--spacing);
 }
 
 .grid__column {
@@ -33,34 +32,52 @@ body {
 }
 
 .grid__column--inputs {
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  /* flex-grow: 1; */
+  border: var(--border);
   background-color: beige;
 }
 
 .grid__column--items {
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  /* flex-grow: 1; */
+  border: var(--border);
   background-color: azure;
 }
 
 .title {
+  margin-bottom: var(--spacing);
   padding: var(--spacing);
   background-color: var(--color-dark);
   color: var(--color-light);
   border-bottom: var(--border);
 }
 
-.text-for-thing {
+.thing__label {
+  margin-bottom: calc(var(--spacing) / 2);
+  display: inline-block;
+  font-weight: bold;
+}
+
+.thing__thing {
   width: 100%;
   padding: var(--spacing);
+}
+
+.thing__thing:focus,
+.thing__thing:hover {
+  outline: none;
+  border-style: dashed;
 }
 
 input, textarea {
   border: var(--border);
   background-color: white;
+  width: 100%;
+  max-width: 100%;
 }
 
 [type="button"] {
-  width: 100%;
   padding: var(--spacing);
   margin-top: var(--spacing);
   cursor: pointer;
@@ -73,7 +90,7 @@ input, textarea {
 }
 
 [type="button"]:active {
-  padding: calc(var(--spacing) - 2px);;
+  transform: scale(.99);
 }
 
 .things-i-learned {

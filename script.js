@@ -1,6 +1,6 @@
 const itemsLearned = document.querySelector(".items-learned");
 const list = document.createElement("ol");
-const textarea = document.querySelector(".text-for-thing");
+const textarea = document.querySelector(".thing__thing");
 const submit = document.querySelector(".add-item");
 const removeAll = document.querySelector(".remove-all");
 const listItems = list.querySelectorAll("li");
@@ -23,6 +23,8 @@ submit.addEventListener("click", function () {
     element.innerHTML = text;
     list.appendChild(element);
     localStorage.setItem(localStorage.length + 1, text);
+    textarea.value = '';
+    textarea.placeholder = 'Anything else?';
   }
 });
 
