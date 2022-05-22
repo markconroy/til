@@ -2,6 +2,7 @@
   --color-dark: #333;
   --color-light: #fafafa;
   --spacing: 1rem;
+  --spacing-medium: calc(var(--spacing) / 2);
   --border-width: 3px;
   --border-color: var(--color-dark);
   --border: var(--border-width) solid var(--border-color);
@@ -10,6 +11,15 @@
 
 *, *::after, *::before {
   box-sizing: border-box;
+}
+
+.sr-only {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
 }
 
 a, input, textarea {
@@ -32,15 +42,11 @@ body {
 }
 
 .grid__column--inputs {
-  /* min-height: 100vh; */
-  /* flex-grow: 1; */
   border: var(--border);
   background-color: beige;
 }
 
 .grid__column--items {
-  /* min-height: 100vh; */
-  /* flex-grow: 1; */
   border: var(--border);
   background-color: azure;
 }
@@ -54,7 +60,7 @@ body {
 }
 
 .thing__label {
-  margin-bottom: calc(var(--spacing) / 2);
+  margin-bottom: var(--spacing-medium);
   display: inline-block;
   font-weight: bold;
 }
@@ -103,6 +109,38 @@ input, textarea {
   padding: var(--spacing);
 }
 
+.thing-i-learned__text {
+  background-color: beige;
+  margin: 0;
+  padding: var(--spacing);
+  border: var(--border);
+}
+
 .thing-i-learned + .thing-i-learned {
   margin-top: var(--spacing);
+}
+
+.share-list {
+  display: flex;
+  justify-content: end;
+  padding-left: 0;
+  padding-top: var(--spacing);
+}
+.share-list__item {
+  margin-left: var(--spacing);
+  list-style: none;
+}
+.share-list__link svg {
+  width: 1.5rem;
+  height: auto;
+  transition: var(--transition-time);
+}
+
+.share-list__link:hover svg,
+.share-list__link:focus svg {
+  transform: scale(1.5);
+}
+.share-list__link:hover,
+.share-list__link:focus {
+  outline: none;
 }
