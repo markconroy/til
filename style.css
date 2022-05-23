@@ -77,21 +77,6 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) {
-  .grid__column::before,
-  .grid__column::after {
-    border: 2px solid black;
-    content: "";
-    position: absolute;
-    inset: 0;
-    transform: rotate(0.5deg);
-    pointer-events: none;
-  }
-  .grid__column::after {
-    transform: rotate(-0.5deg);
-  }
-}
-
 .grid__column--inputs {
   border: var(--border);
   background-color: beige;
