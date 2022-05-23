@@ -146,8 +146,10 @@ input, textarea {
   padding-left: 0;
   padding-top: var(--spacing);
 }
+
 .share-list__item {
   margin-left: var(--spacing);
+  line-height: 1;
   list-style: none;
 }
 .share-list__link svg {
