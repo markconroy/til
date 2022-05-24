@@ -9,9 +9,15 @@ itemsLearned.appendChild(list);
 for (let i = localStorage.length; i >= 1; i--) {
   const element = document.createElement("li");
   element.classList.add("thing-i-learned");
+  element.setAttribute('data-index', `${i}`);
   list.appendChild(element);
   element.innerHTML = `
-    <p class="thing-i-learned__text">${localStorage[i]}</p>
+    <p class="thing-i-learned__text">
+      <span class="thing-i-learned__text-content">${localStorage[i]}</span>
+      <span class="thing-i-learned__remove-item">
+        <button class="thing-i-learned__remove-button">X</button>
+      </span>
+    </p>
     <ul class="share-list">
       <li class="share-list__item"><a class="share-list__link" href="https://twitter.com/share?url=https://til.mark.ie&text=Today I learned: ${localStorage[i]} - shared via TIL App" target="_blank">
         <span class="sr-only">Share on Twitter</span>
@@ -25,13 +31,19 @@ for (let i = localStorage.length; i >= 1; i--) {
 
 }
 
-submit.addEventListener("click", function () {
+submit.addEventListener("click", () => {
   const text = textarea.value;
   if (text) {
     const element = document.createElement("li");
     element.classList.add("thing-i-learned");
+    element.setAttribute('data-index', `${localStorage.length + 1}`);
     element.innerHTML = `
-      <p class="thing-i-learned__text">${text}</p>
+      <p class="thing-i-learned__text">
+        <span class="thing-i-learned__text-content">${text}</span>
+        <span class="thing-i-learned__remove-item">
+          <button>X</button>
+        </span>
+      </p>
       <ul class="share-list">
         <li class="share-list__item"><a class="share-list__link" href="https://twitter.com/share?url=https://til.mark.ie&text=Today I learned: ${text} - shared via TIL App" target="_blank">
           <span class="sr-only">Share on Twitter</span>
@@ -48,9 +60,17 @@ submit.addEventListener("click", function () {
   }
 });
 
-removeAll.addEventListener("click", function () {
+removeAll.addEventListener("click", () => {
   localStorage.clear();
   list.querySelectorAll("li").forEach((item) => {
     item.remove();
+  });
+});
+
+const removeThisItems = Array.from(document.querySelectorAll(".thing-i-learned__remove-button"));
+console.log(removeThisItems);
+removeThisItems.forEach(item => {
+  item.addEventListener("click", (e) => {
+    console.log(e);
   });
 });
