@@ -45,6 +45,7 @@ submit.addEventListener("click", function () {
     localStorage.setItem(localStorage.length + 1, text);
     textarea.value = '';
     textarea.placeholder = 'Anything else?';
+    textarea.focus();
   }
 });
 
