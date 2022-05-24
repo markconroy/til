@@ -28,7 +28,6 @@ for (let i = localStorage.length; i >= 1; i--) {
     </ul>
   `;
   itemKey = localStorage.length + 1;
-
 }
 
 submit.addEventListener("click", () => {
@@ -57,6 +56,7 @@ submit.addEventListener("click", () => {
     localStorage.setItem(localStorage.length + 1, text);
     textarea.value = '';
     textarea.placeholder = 'Anything else?';
+    textarea.focus();
   }
 });
 
@@ -67,10 +67,12 @@ removeAll.addEventListener("click", () => {
   });
 });
 
-const removeThisItems = Array.from(document.querySelectorAll(".thing-i-learned__remove-button"));
-console.log(removeThisItems);
-removeThisItems.forEach(item => {
+const removeTheseItems = Array.from(document.querySelectorAll(".thing-i-learned__remove-button"));
+removeTheseItems.forEach(item => {
   item.addEventListener("click", (e) => {
-    console.log(e);
+    const itemToRemove = item.closest('.thing-i-learned');
+    const itemToRemoveIndex = `${itemToRemove.dataset.index}`;
+    localStorage.removeItem(itemToRemoveIndex);
+    itemToRemove.remove();
   });
 });
