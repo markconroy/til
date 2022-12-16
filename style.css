@@ -168,17 +168,18 @@ input, textarea {
   line-height: 1;
   list-style: none;
 }
-.share-list__link svg {
+
+.share-list__action svg {
   width: 1.5rem;
   height: auto;
   transition: var(--transition-time);
 }
 
-.share-list__link:hover svg,
-.share-list__link:focus svg {
+.share-list__action:hover svg,
+.share-list__action:focus svg {
   transform: scale(1.5);
 }
-.share-list__link:hover,
-.share-list__link:focus {
+.share-list__action:hover,
+.share-list__action:focus {
   outline: none;
 }
